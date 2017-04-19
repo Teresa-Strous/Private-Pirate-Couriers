@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Private Pirate Couriers</title>
+  <meta name="description" content="private pirate couriers">
+  <link rel="stylesheet" href="stylesheets/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Asar" rel="stylesheet">
+</head>
+<body>
+  <section id="header">
+    <nav id="nav">
+      <div class="nav-section-end">
+        <img id="logo" src="images/logo.svg"/>
+      </div>
+      <button class="c-hamburger c-hamburger--htx">
+        <span>toggle menu</span>
+      </button>
+      <div class="nav-section-main">
+        <h1>Private Pirate Couriers</h1>
+      </div>
+      <div class="nav-section">
+        <div id="search-field">
+          <input type="search" id="search" class="tracker track-sml" placeholder="ID...">
+          <input type="search" id="search" class="tracker track-lrg" placeholder="tracking id...">
+          <input type="submit" class="clicker tracker track-sml" id="tracking-search" value="Track"></input>
+          <input type="submit" class="clicker tracker track-lrg" id="tracking-search" value="Track Booty"></input>
+        </div>
+      </div>
+    </nav>
+    <div id="sub-nav">
+      <ul class="nav-two">
+        <li><a href="http://google.com.au">Shipping</a></li>
+        <li><a href="http://google.com.au">Quote</a></li>
+        <li><a href="http://google.com.au">Packaging</a></li>
+        <li><a href="http://google.com.au">Tracking</a></li>
+        <li><a href="http://google.com.au">About</a></li>
+        <li><a href="http://google.com.au">Contact</a></li>
+      </ul>
+    </div>
+  </section>
+  <section id="main">
+      <img src="images/slogan-white.svg"/>
+  </section>
+  <section id="attributes">
+    <div class="port">
+      <img src="images/fast-ship-symbol.svg" class="symbol"/>
+      <h4>Fast</h4>
+    </div>
+    <div class="port">
+      <img src="images/eyepatch-symbol.svg" class="symbol"/>
+      <h4>Discreet</h4>
+    </div>
+    <div class="port">
+      <img src="images/spyglass-symbol.svg" class="symbol"/>
+      <h4>Tracking</h4>
+    </div>
+    <div class="port">
+      <img src="images/pegleg-symbol.svg" class="symbol"/>
+      <h4>Support</h4>
+    </div>
+  </section>
+  <section id="main-info">
+    <div class="col-left">
+      <div id="text-box">
+        <h3 class="heading">Do you like puzzles?</h3>
+        <p class="sub-note-text heading">How about 100% anonymous deliveries?</p>
+        <p class="body">Enter your GPS location and collection time and we will send you an encrypted tressure map to collect your shiny spoils!</p>
+        <p>We keep all hands on deck 24/7 to ensure a swift and reliable delivery.</p>
+      </div>
+    </div>
+    <div class="col-right">
+      <form autocomplete="on" id="main-form">
+        <img src="images/scroll.png" alt="background image scroll" id="form-background-scroll-img"/>
+        <div id="form-question-1">
+          <p>Select Date & Time:</p>
+          <input type="text" name="date" value="DD/MM/YYYY">
+          <input type="text" name="time" value="00:00">
+        </div>
+        <div id="form-question-2">
+          <button class="button clicker" type="button">Find my GPS location</button>
+          <p>or</p>
+          <button type="button" class="button clicker" id="button"><a id="coordinates-controller" href="#coordinates">Enter your prefered co-ordinates</a></button>
+          <fieldset id="coordinates">
+            <div id="col-left">
+              <p>Latitude</p>
+              <input type="text" name="location" value="40.741895">
+            </div>
+            <div id="col-right">
+              <p>Longitude</p>
+              <input type="text" name="location" value="-73.989308">
+            </div>
+          </fieldset>
+        </div>
+      </form>
+    </div>
+  </section>
+  <section id="testimonial-section">
+    <img src="images/pirate.png" id="pirate" alt="pirate sketch"/>
+    <div id="testimonials">
+      <ul>
+   			<li>
+   				<blockquote>This has to be the most awesome transport service I've ever used!</blockquote>
+   				<p class="author">John Doe</p>
+   			</li>
+   			<li>
+   				<blockquote>Simply amazing! They solved all my problems. I highly recommend it.</blockquote>
+   				<p class="author">John Smith</p>
+   			</li>
+   			<li>
+   				<blockquote>A tremendous success. It is like walking on sunshine compared to its competitors.</blockquote>
+   				<p class="author">Ben Cooper Smith</p>
+   			</li>
+      </ul>
+     </div>
+  </section>
+  <footer>
+    <p>© Private Pirate Couriers is a registered trademark</p>
+  </footer>
+  <script src="scripts/jquery-3.1.0.min.js"></script>
+  <script>
+    $(function(){
+    	var items = (Math.floor(Math.random() * ($('#testimonials li').length)));
+    	$('#testimonials li').hide().eq(items).show();
+
+      function next(){
+    		$('#testimonials li:visible').delay(5000).fadeOut('slow',function(){
+    			$(this).appendTo('#testimonials ul');
+    			$('#testimonials li:first').fadeIn('slow',next);
+        });
+       }
+      next();
+    });
+
+    //hamburger
+    $(".c-hamburger").click(function(){
+      $(this).toggleClass("is-active")
+      $('.nav-two').toggleClass('is-active')
+    });
+  </script>
+</body>
+</html>
